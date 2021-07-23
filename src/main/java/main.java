@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class main {
     public static void main(String[] args) throws IOException {
@@ -20,30 +21,26 @@ public class main {
         box.add(mars);
         box.add(ytky);
 
+        double boxWeight1 = 0;
+        double boxPrice1 = 0;
+
+        Iterator <Candy_abstract> iterator = box.iterator();
+
+        while (iterator.hasNext())
+        {
+            Candy_abstract element = iterator.next();
+            boxWeight1 = boxWeight1 + element.weight;
+            boxPrice1 = boxPrice1 + element.price;
+        }
+
+        System.out.println("Вес коробки равен ещё " + boxWeight1);
+        System.out.println("Ценна коробки равна ещё " + boxPrice1);
+
         System.out.println("Вес коробки равен " + boxWeight);
         System.out.println("Ценна коробки равна " + boxPrice);
         System.out.println(bird.toString());
         System.out.println(mars.toString());
         System.out.println(ytky.toString());
 
-
-        /*System.out.print("Введите название продукта ");
-        String name = reader.readLine();
-        switch (name){
-            case ("конфета"):
-                System.out.print("Введите название продукта ");
-                String namenam = reader.readLine();
-                System.out.print("Введите название конфеты ");
-                String candyName = reader.readLine();
-                System.out.print("Введите тип конфеты ");
-                String type = reader.readLine();
-                System.out.print("Введите вес продукта ");
-                double weight = Double.parseDouble(reader.readLine());
-                System.out.print("Введите цену продукта ");
-                double price = Double.parseDouble(reader.readLine());
-                System.out.print("Введите id продукта ");
-                int id = Integer.parseInt(reader.readLine());
-                Candy  = new Candy(candyName , type , weight , price , id);
-        }*/
     }
 }
