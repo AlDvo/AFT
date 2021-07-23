@@ -1,13 +1,12 @@
 package main.java;
 
 public class Marmelad extends Candy_abstract {
-    String name;
-    double weight;
-    double price;
-    int id;
 
-    Marmelad(String name , double weight,double price, int id){
+    String shape;
+
+    Marmelad(String name ,String shape, double weight,double price, int id){
         this.name = name;
+        this.shape = shape;
         this.price = price;
         this.weight = weight;
         this.id = id;

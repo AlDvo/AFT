@@ -1,13 +1,13 @@
 package main.java;
 
-public class Candy extends Candy_abstract {
-    String name;
-    double weight;
-    double price;
-    int id;
 
-    Candy(String name, double weight, double price, int id) {
+public class Candy extends Candy_abstract {
+
+    String type_candy;
+
+    Candy(String name,String type_candy, double weight, double price, int id) {
         this.name = name;
+        this.type_candy = type_candy;
         this.price = price;
         this.weight = weight;
         this.id = id;

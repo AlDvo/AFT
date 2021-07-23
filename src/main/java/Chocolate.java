@@ -1,15 +1,14 @@
 package main.java;
 
 public class Chocolate extends Candy_abstract{
-    String name;
-    double weight;
-    double price;
-    int id;
 
-    Chocolate(String name , double weight,double price,int id){
+    String  color_chocolate;
+
+    Chocolate(String name ,String color_chocolate, double weight,double price,int id){
         this.name = name;
+        this.color_chocolate = color_chocolate;
         this.price = price;
-        this.weight =   weight;
+        this.weight = weight;
         this.id = id;
     }
 
