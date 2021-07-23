@@ -1,15 +1,11 @@
 package main.java;
 
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    public static void main(String[] args){
         ArrayList<Candy_abstract> box = new ArrayList<>();
         Candy bird = new Candy("bird","кислая", 1.5,155.5, 5674949);
         Chocolate mars = new Chocolate("mars", "Белый",0.9,55, 56822126);
