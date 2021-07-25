@@ -1,4 +1,5 @@
-package main.java;
+package main.java.Task1;
+
 
 public class Chocolate extends Candy_abstract{
 

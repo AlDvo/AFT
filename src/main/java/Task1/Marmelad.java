@@ -1,4 +1,4 @@
-package main.java;
+package main.java.Task1;
 
 public class Marmelad extends Candy_abstract {
 
