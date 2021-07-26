@@ -7,10 +7,11 @@ import static main.java.Task2.Buffered.readUsingScanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введите путь до фаила ");
+        String way = scan.nextLine();
 
-       // String contents = readUsingScanner("C:\\Users\\lelik\\IdeaProjects\\AFT\\fileExample.txt");
-
-        String contents = readUsingScanner("\\AFT\\fileExample.txt");
+        String contents = readUsingScanner(way);
 
         String[] word = contents.split("[^a-zA-Z]+");
         Arrays.sort(word);
