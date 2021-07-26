@@ -8,7 +8,9 @@ import static main.java.Task2.Buffered.readUsingScanner;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        String contents = readUsingScanner("fileExample.txt");
+       // String contents = readUsingScanner("C:\\Users\\lelik\\IdeaProjects\\AFT\\fileExample.txt");
+
+        String contents = readUsingScanner("\\AFT\\fileExample.txt");
 
         String[] word = contents.split("[^a-zA-Z]+");
         Arrays.sort(word);
