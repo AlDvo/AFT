@@ -14,8 +14,7 @@ public class Buffered {
             scanner.close();
             return data;
         }else{
-        String a = "C:\\Users\\lelik\\IdeaProjects";
-        Scanner scanner = new Scanner(Paths.get(a + fileName), StandardCharsets.UTF_8.name());
+        Scanner scanner = new Scanner(Paths.get(fileName), StandardCharsets.UTF_8.name());
         String data = scanner.useDelimiter("\\A").next();
         scanner.close();
         return data;}
