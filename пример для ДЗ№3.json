@@ -46,6 +46,10 @@
         },
         {
           "name": "Mail Group",
+          "currency": [
+            "RUB",
+            "USD"
+          ],
           "code": "12345",
           "date": "12.01.2014"
         }

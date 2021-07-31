@@ -88,19 +88,71 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите дату ");
         String date =scan.nextLine().replace('/','.').replace(',','.');
-        scan.close();
+        String dateNew;
+        if((date.length() < 9)&&(date.lastIndexOf(".") ==5)&&(Integer.parseInt(date.substring(6,8))< 40)){
+            dateNew = date.substring(0,6) + "20" + date.substring(6,8);
+        }else if ((date.length() < 9)&&(date.lastIndexOf(".") ==5)&&(Integer.parseInt(date.substring(6,8))> 40)) {
+            dateNew = date.substring(0, 6) + "19" + date.substring(6, 8);
+        }else{
+            dateNew = date;
+        }
 
         DateTimeFormatter germanFormatter = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).withLocale(Locale.GERMAN);
-        LocalDate localDate = LocalDate.parse(date, germanFormatter);
+        LocalDate localDate = LocalDate.parse(dateNew, germanFormatter);
 
         for(int i = 0 ; i < companies1.length; i++){
-            germanFormatter = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).withLocale(Locale.GERMAN);
-            LocalDate dateFounded = LocalDate.parse(companies1[i].getFounded(), germanFormatter);
+            LocalDate dateFounded;
+            if(companies1[i].getFounded().indexOf(".") < 2){
+                germanFormatter = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).withLocale(Locale.GERMAN);
+                dateFounded = LocalDate.parse(("0" + companies1[i].getFounded()), germanFormatter);
+            }else {
+                germanFormatter = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).withLocale(Locale.GERMAN);
+                dateFounded = LocalDate.parse(companies1[i].getFounded(), germanFormatter);
+            }
+
             if (dateFounded.isAfter(localDate)){
                 System.out.println(companies1[i].getName() + " " + companies1[i].getFounded());
             }
         }
 
+//        На запрос пользователя в виде кода валюты, например EU, USD, RUB и пр.
+//        выводить id компании и коды ее ценных бумаг, использующих заданную
 
+        System.out.println("Введите код валюты ");
+        String currency = scan.nextLine();
+        scan.close();
+
+
+        for(int i = 0; i < securities0.length; i++){
+            for(int j = 0 ; j <securities0[i].getCurrency().length;j++ ){
+                if (currency.equals(CURRENCY.toString(securities0[i].getCurrency()[j]))){
+                    System.out.println(companies1[0].getId() + " id фирмы, " + securities0[i].getCode());
+                }
+            }
+        }
+
+        for(int i = 0; i < securities1.length; i++){
+            for(int j = 0 ; j <securities1[i].getCurrency().length;j++ ){
+                if (currency.equals(CURRENCY.toString(securities1[i].getCurrency()[j]))){
+                    System.out.println(companies1[1].getId() + " id фирмы, " + securities1[i].getCode());
+                }
+            }
+        }
+
+        for(int i = 0; i < securities2.length; i++){
+            for(int j = 0 ; j <securities2[i].getCurrency().length;j++ ){
+                if (currency.equals(CURRENCY.toString(securities2[i].getCurrency()[j]))){
+                    System.out.println(companies1[2].getId() + " id фирмы, " + securities2[i].getCode());
+                }
+            }
+        }
+
+        for(int i = 0; i < securities3.length; i++){
+            for(int j = 0 ; j <securities3[i].getCurrency().length;j++ ){
+                if (currency.equals(CURRENCY.toString(securities3[i].getCurrency()[j]))){
+                    System.out.println(companies1[3].getId() + " id фирмы, " + securities3[i].getCode());
+                }
+            }
+        }
     }
 }

@@ -157,5 +157,9 @@ class Securities extends Company {
 enum CURRENCY {
     RUB,
     USD,
-    EU
+    EU;
+
+    public static String toString(CURRENCY currency) {
+        return String.valueOf(currency);
+    }
 }
